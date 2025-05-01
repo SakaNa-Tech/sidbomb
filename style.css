@@ -302,9 +302,14 @@ header .navbar{
     margin-bottom: 1rem;
 }
 
+.service-icon {
+    font-size: 2rem;
+    color: var(--dark-green-color);
+}
+
 .service-description {
     font-size: var(--font-size-m);
-    color: var(--black-color);
+    color: var(--white-color);
     margin-top: 1rem;
 }
 
@@ -577,3 +582,15 @@ footer p {
     }
 }
 
+.service-item {
+    background-color: var(--dark-green-color);
+    padding: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.service-item:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
