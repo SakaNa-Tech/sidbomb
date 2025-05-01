@@ -423,20 +423,23 @@ footer p {
     transform: rotate(45deg);
 }
 
+/* Slider Container */
 .slider-container {
     position: relative;
-    width: 700px; /* Increased width for an even wider view */
+    width: 700px; /* Adjusted width for an even wider view */
     height: 450px;
     margin: 100px auto;
     perspective: 1000px; /* Optional: for subtle depth effect */
 }
 
+/* Wrapper for the slides */
 .slides-wrapper {
     position: relative;
     width: 100%;
     height: 100%;
 }
 
+/* Individual Slide */
 .slide {
     position: absolute;
     top: 0;
@@ -445,7 +448,7 @@ footer p {
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.5s ease, opacity 0.5s ease;
     opacity: 0.5;
     transform: translateX(0) scale(1); /* Increased scale for larger images */
@@ -480,20 +483,28 @@ footer p {
     color: white;
     font-size: 2rem;
     cursor: pointer;
-    padding: 0.5rem 1rem;
+    padding: 1rem;  /* Increased padding for better mobile click area */
     z-index: 4;
-    border-radius: 10px;
+    border-radius: 50%;  /* Making buttons round for easier tapping */
     transition: background 0.3s;
+    width: 50px;   /* Set fixed width */
+    height: 50px;  /* Set fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Left Button (Previous) */
 .slider-container .prev {
-    left: -60px;
+    left: 10px; /* Position closer to the image */
 }
 
+/* Right Button (Next) */
 .slider-container .next {
-    right: -60px;
+    right: 10px; /* Position closer to the image */
 }
 
+/* Button Hover Effect */
 .slider-container button:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
