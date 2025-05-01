@@ -10,7 +10,7 @@
         <header>
             <div class="navbar section-content">
                 <div class="nav-logo">
-                    <img src=".image/logo.jpg" alt="Logo" class="logo-image" />
+                    <img src="./image/logo.jpg" alt="Logo" class="logo-image" />
                     <h2 class="logo-text">SakaNa Tech</h2>
                 </div>
                 <nav>
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                     <div class="hero-image-wrapper">
-                        <img src=".image/Jeepney.png" alt="Hero" class="hero-image">
+                        <img src="./image/Jeepney.png" alt="Hero" class="hero-image">
                     </div>
                 </div>
             </section>
@@ -57,6 +57,22 @@
                     <p class="about-description">
                         SakaNa Tech is dedicated to using technology to revolutionize agriculture. Our innovative SID robot combines traditional design with modern technology to create a more efficient farming solution.
                     </p>
+                    <div class="slider-container">
+                        <button class="prev" onclick="scrollSlider(-1)">❮</button>
+                        
+                        <div class="slides-wrapper" id="slider">
+                            <img src="./image/slider1.jpg" class="slide" alt="Slide 1">
+                            <img src="./image/slider2.jpg" class="slide" alt="Slide 2">
+                            <img src="./image/slider3.jpg" class="slide" alt="Slide 3">
+                            <img src="./image/slider4.jpg" class="slide" alt="Slide 4">
+                            <img src="./image/slider5.jpg" class="slide" alt="Slide 5">
+                            <img src="./image/slider6.jpg" class="slide" alt="Slide 6">
+                        </div>
+                    
+                        <button class="next" onclick="scrollSlider(1)">❯</button>
+                    </div>
+                    
+                    
                     </div>
                 </div>
             </section>
@@ -119,5 +135,48 @@
                 <p>&copy; 2025 SakaNa Tech. All rights reserved.</p>
             </div>
         </footer>
+        <!-- Other HTML content -->
+
+<!-- Your image slider HTML goes here -->
+
+<script>
+    // JavaScript code goes here
+    const slides = document.querySelectorAll('.slide');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    
+    let activeIndex = 0;
+    
+    function updateSlides() {
+        slides.forEach((slide, index) => {
+            slide.classList.remove('active', 'behind-1', 'behind-2');
+            
+            if (index === activeIndex) {
+                slide.classList.add('active');
+            } else if (index === activeIndex + 1 || (activeIndex === slides.length - 1 && index === 0)) {
+                slide.classList.add('behind-1');
+            } else if (index === activeIndex + 2 || (activeIndex === slides.length - 2 && index === 0)) {
+                slide.classList.add('behind-2');
+            }
+        });
+    }
+    
+    function goPrev() {
+        activeIndex = (activeIndex === 0) ? slides.length - 1 : activeIndex - 1;
+        updateSlides();
+    }
+    
+    function goNext() {
+        activeIndex = (activeIndex === slides.length - 1) ? 0 : activeIndex + 1;
+        updateSlides();
+    }
+    
+    prevButton.addEventListener('click', goPrev);
+    nextButton.addEventListener('click', goNext);
+    
+    updateSlides();
+    </script>
+    
     </body>
-</html>
+    </html>
+    
