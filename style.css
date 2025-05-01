@@ -75,10 +75,13 @@ img{
 /* Navbar styles */
 header{
     position: sticky;
+    top: 0;
+    left: 0;
     width: 100%;
-    z-index: 2;
+    z-index: 1000;
     background: var(--dark-green-color);
-    padding: 1rem 0;
+    align-items: center;
+    justify-content: center;
 }
 
 header .navbar{
