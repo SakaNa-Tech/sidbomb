@@ -349,38 +349,68 @@ footer p {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+    /* Navbar: Stack links vertically on small screens */
     .navbar .nav-links {
         flex-direction: column;
         gap: 1rem;
-        margin: 0;
     }
 
-    .hero-section {
+    /* Hero Section: Stack content vertically */
+    .hero-section .section-content {
         flex-direction: column;
-        text-align: center;
-        padding: 2rem;
+        align-items: center;
     }
 
+    /* Hero Image: Adjust max-width for smaller screens */
     .hero-image-wrapper {
-        margin-top: 1rem;
-        max-width: 100%;
+        max-width: 300px;
     }
 
+    /* Hero Title: Adjust font size for smaller screens */
     .hero-title {
-        font-size: var(--font-size-xl);
+        font-size: 1.5rem;
     }
 
-    .hero-subtitle {
-        font-size: var(--font-size-m);
-    }
-
-    .hero-description {
-        font-size: var(--font-size-s);
-    }
-
+    /* Services Grid: Stack grid items vertically */
     .services-grid {
         flex-direction: column;
     }
 
-    .service-item {
+    /* Slider Container: Adjust width and height for small screens */
+    .slider-container {
+        width: 100%;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Navbar: Adjust font size and gap */
+    .navbar .nav-links {
+        font-size: 0.9rem;
+        gap: 1rem;
+    }
+
+    /* Contact Form: Adjust padding for inputs and textarea */
+    .contact-form input, .contact-form textarea {
+        padding: 0.5rem;
+        font-size: var(--font-size-m);
+    }
+
+    /* Contact Button: Adjust padding for smaller screens */
+    .contact-submit-btn {
+        padding: 0.5rem 1rem;
+    }
+    
+    /* Contact Form: Adjust form inputs for smaller screens */
+    .contact-form input, .contact-form textarea {
+        padding: 1rem;
+        font-size: var(--font-size-m);
+    }
+
+    /* Contact Submit Button: Adjust padding */
+    .contact-submit-btn {
+        padding: 1rem 2rem;
+    }
+}
+
