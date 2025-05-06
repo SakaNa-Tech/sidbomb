@@ -74,7 +74,7 @@ img{
 
 /* Navbar styles */
 header{
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -154,13 +154,12 @@ header .navbar{
 
 /* Hero Section styles */
 .hero-section {
-    position: relative;
-    min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  text-align: center;
+  padding: 0 20px;
 }
 .hero-section::before {
         content: "";
