@@ -154,47 +154,37 @@ header .navbar{
 
 /* Hero Section styles */
 .hero-section {
-    position: relative; /* ✅ add this line */
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh; /* Full viewport height */
     text-align: center;
     padding: 0 20px;
-    overflow: hidden; /* optional: prevents ::before from spilling out */
+    overflow: hidden;
+    color: white; /* ✅ Text color white */
 }
 
 .hero-section::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                    url('./image/background2.jpg') no-repeat center center/cover;
-        z-index: 0;
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('./image/background2.jpg') no-repeat center center/cover;
+    z-index: 0;
 }
+
 .hero-section .section-content {
     display: flex;
+    flex-direction: column; /* ✅ Stack vertically */
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 2rem;
     z-index: 1;
     width: 100%;
     max-width: var(--site-max-width);
     padding: 2rem;
-}
-.hero-image-wrapper {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-}
-.hero-image {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: var(--border-radius-m);
+    color: var(--white-color); /* ✅ Inherit white text */
 }
 
 .hero-details {
@@ -205,13 +195,13 @@ header .navbar{
 .hero-title {
     font-size: var(--font-size-xxl);
     font-weight: var(--font-weight-bold);
-    color: var(--black-color);
+    color: var(--white-color);
 }
 
 .hero-subtitle {
     font-size: var(--font-size-l);
     font-weight: var(--font-weight-medium);
-    color: var(--black-color);
+    color: var(--white-color);
     margin-top: 1rem;
 }
 
@@ -219,7 +209,7 @@ header .navbar{
     font-size: var(--font-size-m);
     margin-top: 1rem;
     line-height: 1.6;
-    color: var(--black-color);
+    color: var(--white-color);
 }
 
 .hero-buttons {
@@ -409,29 +399,9 @@ footer p {
     font-weight: var(--font-weight-medium);
 }
 
-.chat-box {
-    background-color: var(--white-color);
-    padding: 2rem;
-    border-radius: var(--border-radius-l);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    border: 2px solid var(--light-green-color);
-    margin-right: 2rem;
-    max-width: 600px;
-}
 
 /* Optional: make the "chat bubble" a bit more chatty */
-.chat-box::after {
-    content: "";
-    position: absolute;
-    bottom: 20px;
-    left: -20px;
-    width: 20px;
-    height: 20px;
-    background: var(--white-color);
-    border-left: 2px solid var(--light-green-color);
-    border-bottom: 2px solid var(--light-green-color);
-    transform: rotate(45deg);
-}
+
 
 /* Slider Container */
 .slider-container {
