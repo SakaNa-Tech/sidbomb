@@ -154,32 +154,39 @@ header .navbar{
 
 /* Hero Section styles */
 .hero-section {
-    display: flex;
-    position: relative;
-  align-items: center;
-  height: 100vh; /* Full viewport height */
-  text-align: center;
-  padding: 0 20px;
-}
-.hero-section::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                    url('./image/background2.jpg') no-repeat center center/cover;
-        z-index: 0;
-}
-.hero-section .section-content {
+    position: relative; /* Added to fix background positioning */
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    z-index: 1;
-    width: 100%;
-    max-width: var(--site-max-width);
-    padding: 2rem;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    overflow: hidden; /* Prevent background/image overflow */
+    text-align: center;
+    flex-direction: column;
 }
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('./image/background2.jpg') no-repeat center center/cover;
+    z-index: 0;
+}
+
+.hero-section .section-content {
+    position: relative;
+    z-index: 1;
+    flex-direction: column; /* Stack by default for mobile-first */
+    text-align: center;
+}
+
+@media screen and (min-width: 769px) {
+    .hero-section .section-content {
+        flex-direction: row; /* Horizontal layout on larger screens */
+    }
+}
+
 .hero-image-wrapper {
     flex: 1;
     display: flex;
