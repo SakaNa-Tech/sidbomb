@@ -155,7 +155,7 @@ header .navbar{
 /* Hero Section styles */
 .hero-section {
     display: flex;
-  justify-content: center;
+    position: relative;
   align-items: center;
   height: 100vh; /* Full viewport height */
   text-align: center;
