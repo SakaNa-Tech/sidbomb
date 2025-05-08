@@ -199,6 +199,12 @@ header {
     overflow: hidden;
     color: white; /* ✅ Text color white */
 }
+    @media (max-width: 600px) {
+        .hero-section {
+            padding: 4rem 1rem 2rem; /* Add vertical breathing room */
+            height: auto; /* Allow height to grow based on content */
+        }
+    }
 
 .hero-section::before {
     content: "";
@@ -220,28 +226,31 @@ header {
     max-width: var(--site-max-width);
     padding: 2rem;
     color: var(--white-color); /* ✅ Inherit white text */
+    padding: 1rem;
 }
 
 .hero-details {
     flex: 1;
-    min-width: 300px;
+    min-width: auto;
+    width: 100%;
 }
 
 .hero-title {
-    font-size: var(--font-size-xxl);
+    font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
     color: var(--white-color);
 }
 
 .hero-subtitle {
-    font-size: var(--font-size-l);
+    font-size: var(--font-size-m);
     font-weight: var(--font-weight-medium);
     color: var(--white-color);
     margin-top: 1rem;
+    
 }
 
 .hero-description {
-    font-size: var(--font-size-m);
+    font-size: var(--font-size-s);
     margin-top: 1rem;
     line-height: 1.6;
     color: var(--white-color);
@@ -286,6 +295,7 @@ header {
     height: auto;
     border-radius: var(--border-radius-m);
 }
+
 
 /* About Section styles */
 .about-section {
