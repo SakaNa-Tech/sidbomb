@@ -4,7 +4,7 @@
 *{
     margin: 0;
     padding: 0;
-    max-width: 100%;
+
     overflow-x: hidden;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
@@ -15,6 +15,11 @@ html {
     scroll-behavior: smooth;
 }
 
+body{
+    margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 
 :root{
     /*--color variables*/
@@ -88,9 +93,13 @@ header {
 
   .navbar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  background-color: var(--dark-green-color);
+  z-index: 1000;
+  position: relative;
   }
 
   .nav-logo {
@@ -122,6 +131,7 @@ header {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: all 0.3s ease; 
   }
 
   .menu-toggle {
@@ -151,9 +161,13 @@ header {
       z-index: 99;
       max-width: 100vw;
       overflow-x: hidden;
+      display: none;
+  flex-direction: column;
+  width: 100%;
     }
   
     .nav-links-container.active {
+        display: flex;
       left: 0;
     }
   
@@ -169,7 +183,7 @@ header {
     background: var(--white-color);
     border-radius: var(--border-radius-m);
     padding: 0.5rem 1rem;
-    transition: all 0.3s ease;
+
 }
 
 .navbar .nav-links a.active{
@@ -434,18 +448,17 @@ footer p {
     font-weight: var(--font-weight-medium);
 }
 
-
-/* Optional: make the "chat bubble" a bit more chatty */
-
-
 /* Slider Container */
 .slider-container {
     position: relative;
-    width: 700px; /* Adjusted width for an even wider view */
+    width: 100%; /* ✅ instead of fixed width */
+    max-width: 700px;
     height: 450px;
     margin: 100px auto;
-    perspective: 1000px; /* Optional: for subtle depth effect */
+    perspective: 1000px;
+    overflow: hidden; /* ✅ contains overflow from slides */
 }
+
 
 /* Wrapper for the slides */
 .slides-wrapper {
@@ -459,15 +472,20 @@ footer p {
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    margin: auto;
     width: 100%;
+    max-width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.5s ease;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.5s ease, opacity 0.5s ease;
     opacity: 0.5;
     transform: translateX(0) scale(1); /* Increased scale for larger images */
 }
+
 
 /* First slide on top */
 .slide.active {
@@ -601,6 +619,4 @@ footer p {
     transform: translateY(-8px) scale(1.03);
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
-body {
-    overflow-x: hidden;
-}
+
