@@ -4,6 +4,8 @@
 *{
     margin: 0;
     padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
@@ -147,6 +149,8 @@ header {
       transition: left 0.3s ease-in-out;
       padding-top: 5rem;
       z-index: 99;
+      max-width: 100vw;
+      overflow-x: hidden;
     }
   
     .nav-links-container.active {
