@@ -45,6 +45,8 @@ html {
 
     /* site max Width */
     --site-max-width: 1300px;
+
+    
 }
 
 /* Global styles */
@@ -186,6 +188,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 80px;
     height: 100vh; /* Full viewport height */
     text-align: center;
     padding: 0 20px;
