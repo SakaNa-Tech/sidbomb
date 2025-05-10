@@ -54,24 +54,19 @@
                     <p class="about-description">
                         SakaNa Tech is dedicated to using technology to revolutionize agriculture. Our innovative SID robot combines traditional design with modern technology to create a more efficient farming solution.
                     </p>
-                    <div class="slider-container">
-                        <button class="prev" onclick="scrollSlider(-1)">❮</button>
-                        
-                        <div class="slides-wrapper" id="slider">
-                            <img src="./image/slider1.jpg" class="slide" alt="Slide 1">
-                            <img src="./image/slider2.jpg" class="slide" alt="Slide 2">
-                            <img src="./image/slider3.jpg" class="slide" alt="Slide 3">
-                            <img src="./image/slider4.jpg" class="slide" alt="Slide 4">
-                            <img src="./image/slider5.jpg" class="slide" alt="Slide 5">
-                            <img src="./image/slider6.jpg" class="slide" alt="Slide 6">
+                    <div class="container">
+                        <div class="slider">
+                            <div class="item" style="slider:url(./image/slider1.jpg)">
+                    </div>
+                            <div class="item" style="slider:url(./image/slider2.jpg)"></div>
+                            <div class="item" style="slider:url(./image/slider3.jpg)"></div>
+                            <div class="item" style="slider:url(./image/slider4.jpg)"></div>
+                            <div class="item" style="slider:url(./image/slider5.jpg)"></div>
+                            <div class="item" style="slider:url(./image/slider6.jpg)"></div>
                         </div>
-                    
-                        <button class="next" onclick="scrollSlider(1)">❯</button>
+                        <button class="prev">&#10094;</button>
+                        <button class="next">&#10095;</button>
                     </div>
-                    
-                    
-                    </div>
-                </div>
             </section>
 
             <!-- Services Section -->
@@ -111,21 +106,13 @@
 <section id="contact" class="contact-section">
     <div class="section-content">
         <h2 class="section-title">Contact Us</h2>
-        <form class="contact-form">
-            <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" placeholder="Enter your name">
-            </div>
-            <div class="form-group">
-                <label for="email">Your Email</label>
-                <input type="email" id="email" placeholder="Enter your email">
-            </div>
-            <div class="form-group">
-                <label for="message">Your Message</label>
-                <textarea id="message" placeholder="Enter your message"></textarea>
-            </div>
-            <button type="submit" class="contact-submit-btn">Send Message</button>
-        </form>
+        <p class="section-description">We would love to hear from you! Reach out to us for inquiries or collaborations.</p>
+
+        <h3 class="contact-info-title">Contact Information</h3>
+        <p class="contact-info">Email: <a href="mailto:">sakanatech@gmail.com</a>
+        </p>
+        <p class="contact-info">Phone: <a href="tel:+639123456789">+63 915 895 8995</a></p>
+        <p class="contact-info">Address: <a href="location"> AAA building Halili Arcade Sta.Maria 3022 Bulacan</a></p>
 
         <div class="contact-socials">
             <p>Follow us on Facebook:</p>

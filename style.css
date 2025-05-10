@@ -236,13 +236,13 @@ header {
 }
 
 .hero-title {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-xxl);
     font-weight: var(--font-weight-bold);
     color: var(--white-color);
 }
 
 .hero-subtitle {
-    font-size: var(--font-size-m);
+    font-size: var(--font-size-l);
     font-weight: var(--font-weight-medium);
     color: var(--white-color);
     margin-top: 1rem;
@@ -250,7 +250,7 @@ header {
 }
 
 .hero-description {
-    font-size: var(--font-size-s);
+    font-size: var(--font-size-m);
     margin-top: 1rem;
     line-height: 1.6;
     color: var(--white-color);
@@ -363,6 +363,22 @@ header {
     color: var(--white-color);
 }
 
+.contact-info{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+ 
+.contact-info a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-size: var(--font-size-m);
+}
+
+.contact-info a:hover {
+    color: var(--accent-yellow-color);
+    text-decoration: underline; 
+}
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -453,99 +469,14 @@ footer p {
 
 /* Optional: make the "chat bubble" a bit more chatty */
 
-
-/* Slider Container */
-.slider-container {
-    position: relative;
-    width: 100%; /* ✅ instead of fixed width */
-    max-width: 700px;
-    height: 450px;
-    margin: 100px auto;
-    perspective: 1000px;
-    overflow: hidden; /* ✅ contains overflow from slides */
-}
-
-
-/* Wrapper for the slides */
-.slides-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-/* Individual Slide */
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    opacity: 0.5;
-    transform: translateX(0) scale(1); /* Increased scale for larger images */
-}
-
-
-/* First slide on top */
-.slide.active {
-    z-index: 3;
-    opacity: 1;
-    transform: translateX(0) scale(1);
-}
-
-/* Second slide slightly behind */
-.slide.behind-1 {
-    z-index: 2;
-    transform: translateX(50px) scale(0.95); /* Adjusted translation for wider view */
-}
-
-/* Third slide further behind */
-.slide.behind-2 {
-    z-index: 1;
-    transform: translateX(100px) scale(0.9); /* Adjusted translation for wider view */
-}
-
-/* Buttons */
-.slider-container button {
-    position: absolute;
+.container{
+    position:absolute;
     top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    padding: 1rem;  /* Increased padding for better mobile click area */
-    z-index: 4;
-    border-radius: 50%;  /* Making buttons round for easier tapping */
-    transition: background 0.3s;
-    width: 50px;   /* Set fixed width */
-    height: 50px;  /* Set fixed height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Left Button (Previous) */
-.slider-container .prev {
-    left: 10px; /* Position closer to the image */
-}
-
-/* Right Button (Next) */
-.slider-container .next {
-    right: 10px; /* Position closer to the image */
-}
-
-/* Button Hover Effect */
-.slider-container button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 600px;
+    
 }
 
 @media screen and (max-width: 768px) {
