@@ -605,15 +605,11 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  transform-style: preserve-3d;
+    transform-style: preserve-3d;
   transition: transform 0.6s ease;
 }
 
-/* Flip effect */
-.card:hover .card-inner,
-.card:focus .card-inner {
-  transform: rotateY(180deg);
-}
+
 
 /* Front and back faces */
 .card-front,
@@ -621,7 +617,6 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -630,17 +625,33 @@ body {
   justify-content: center;
   padding: 1rem;
   transition: background-color 0.6s ease;
+  backface-visibility: hidden; /* Hide the back face when the front is visible */
 }
 
-/* Front face */
+/* Properly flip the back */
+
 .card-front {
   background-color: var(--white-color);
-transform: rotateY(0deg);
+  color: var(--black-color);
+    transform: rotateY(0deg);
+  backface-visibility: hidden; /* Ensure the front disappears when flipped */
+  transition: 1s ease;
+}
+.card-back {
+  background-color: var(--light-green-color);
+  transform: rotateY(180deg);
+    backface-visibility: hidden; /* Ensure the back disappears when flipped */
+}
+
+.card:hover .card-inner,
+.card:hover .card-back {
+  transform: rotateX(360deg);
+    transition: 1s ease-in-out;
 }
 
 .card-front img {
-  width: 70px;
-  height: 70px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 0.5rem;
@@ -651,16 +662,11 @@ transform: rotateY(0deg);
   margin: 0;
 }
 
-/* Back face - light green */
-.card-back {
-  background-color: var(--light-green-color); /* light green */
-  transform: rotateY(180deg); /* Ensure back face is rotated */
-}
 
 /* Back text */
 .card-back p {
   color: var(--black-color);
-  font-size: 0.9rem;
+  font-size: var(--font-size-m);
   text-align: center;
   padding: 0 0.5rem;
 }
@@ -701,12 +707,4 @@ transform: rotateY(0deg);
   }
 }
 
-.team-section {
-  text-align: center;
-}
 
-.team-title {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: var(--white-color);
-}
