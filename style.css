@@ -374,6 +374,7 @@ header {
 }
  
 .contact-info a {
+    padding: 0.5rem ;
     color: var(--white-color);
     text-decoration: none;
     font-size: var(--font-size-m);
@@ -402,15 +403,6 @@ header {
     width: 100%;
 }
 
-.contact-submit-btn {
-    background-color: var(--accent-yellow-color);
-    color: var(--black-color);
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: var(--border-radius-m);
-    font-weight: var(--font-weight-bold);
-    cursor: pointer;
-}
 
 .contact-submit-btn:hover {
     background-color: var(--accent-orange-color);
@@ -855,3 +847,6 @@ body {
     border-style: solid;
     border-color: #009300 transparent transparent transparent;
 }
+
+
+
