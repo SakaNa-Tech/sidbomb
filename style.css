@@ -92,6 +92,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    overflow: hidden;
   }
 
   .nav-logo {
@@ -124,6 +125,7 @@ header {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    overflow: hidden;
   }
 
   .menu-toggle {
